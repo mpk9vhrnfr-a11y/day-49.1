@@ -1,15 +1,22 @@
-//
-//  main.c
-//  day 49.1
-//
-//  Created by Sanaa Kumar on 26/11/25.
-//
-
-#include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return EXIT_SUCCESS;
+int main(void) {
+    char str[100];
+    int i = 0;
+
+    printf("Enter a name: ");
+    scanf("%[^\n]", str);
+
+    if(str[0] != ' ')
+        printf("%c", str[0]);
+
+    while(str[i] != '\0') {
+        if(str[i] == ' ' && str[i+1] != ' ' && str[i+1] != '\0')
+            printf("%c", str[i+1]);
+        i++;
+    }
+
+    printf("\n");
+    return 0;
 }
+
